@@ -1,2 +1,4 @@
 # Assembler
-This is an assembler for a made-up assembly language, made with C.
+This is an assembler for a made-up assembly language, made with C in linux ubuntu.
+
+
