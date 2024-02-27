@@ -1,0 +1,18 @@
+MAIN:  add	$3,$5,$9
+LOOP:  ori	$9,5+,$2
+       la	va!!
+       jmp	Next
+Next:  move	$20,$4
+       bgt	$4,$2,vall
+       la	STR
+       sw    $0,4,$10
+STR:   bne	$31,$9,LOOP
+       c@ll	Next
+       jmp	Next
+END:   stop
+STR:  .asciz    "aBcd"
+LIST: .db	6,-9
+      .dh	27o56
+.entry  K
+K:    .dw	31,-12
+.extern  vall

@@ -1,0 +1,21 @@
+; Examples for command related errors.
+
+MAIN: add	$3,$5,K
+LOOP: or	$9,-5,$2
+      la	$10
+      jmp	$
+Next: move	$20,$4,$11
+      bgt	$4,$+2,END
+      la	K,
+      sw        $0,$6,$10
+      bne	$31,$9,$1
+      call	5
+      jmp	$-4
+END:  stopa
+STR:  .asciz    "aBcd"
+LIST: .db	6,-9
+      .dh	27056
+.entry  K
+K:    .dw	31,-12
+.extern  vall
+

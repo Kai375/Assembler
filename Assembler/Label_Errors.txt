@@ -1,0 +1,20 @@
+; Examples for errors related to labels.
+
+MAIN: add	$3,$5,$9
+LOOP: ori	$9,-5,$2
+      la	vall
+      jmp	Abcdefghijklmnopqrstuvwxyz1234567890
+asciz: move	$20,$4
+      bgt	$4,$2,Abcdefghijklmnopqrstuvwxyz1234567890
+      la	K
+Abcdefghijklmnopqrstuvwxyz1234567890:      sw        $0,4,$10
+      bne	$31,$9,LOOP
+      call	vall
+      jmp	$4
+move:  stop
+STR:  .asciz    "aBcd"
+LIST: .db	6,-9
+      .dh	27056
+.entry  Abcdefghijklmnopqrstuvwxyz1234567890
+K:    .dw	31,-12
+.extern  vall
